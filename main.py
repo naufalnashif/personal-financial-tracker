@@ -6,7 +6,7 @@ from data_entry import get_amount, get_category, get_date, get_desc
 
 class CSV:
     CSV_FILE = 'finance_data.csv'
-    COLUMNS = ['date', 'amount', 'category', 'desc']
+    COLUMNS = ['date_input','date', 'amount', 'category', 'desc']
     DATE_FORMAT = "%d-%m-%Y"
 
     @classmethod
@@ -21,6 +21,7 @@ class CSV:
     def add_entry(cls, date, amount, category, desc):
 
         new_entry = {
+            'date_input' : datetime.today().strftime("%d-%m-%Y"),
             'date': date,
             'amount': amount,
             'category': category,
