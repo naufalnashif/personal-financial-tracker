@@ -1,0 +1,15 @@
+# Mengabaikan folder virtual environment
+venv/
+
+# Mengabaikan file Python bytecode
+*.pyc
+
+# Mengabaikan file konfigurasi IDE
+.vscode/
+.idea/
+
+# Mengabaikan file log
+*.log
+
+# Mengabaikan file sistem macOS
+.DS_Store
