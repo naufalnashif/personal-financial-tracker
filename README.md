@@ -8,7 +8,7 @@ The **Personal Finance Tracker** is a Python-based application designed to help 
 
 ## 🎥 Demo
 Here's a quick demo of the application in action:
-<video controls src="https://github.com/naufalnashif/personal-financial-tracker/blob/eb6b639a8d6f1cdebedfe51cbea8c4c108e3feb3/assets/personal-finance-tracker.mp4" title="assets/personal-finance-tracker.mp4"></video>
+https://github.com/naufalnashif/personal-financial-tracker/blob/main/assets/personal-finance-tracker.mp4
 
 ## 🚀 Features
 
