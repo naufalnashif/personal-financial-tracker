@@ -1,6 +1,7 @@
 import pandas as pd
 import csv
 from datetime import datetime
+import matplotlib.pyplot as plt
 from data_entry import get_amount, get_category, get_date, get_desc
 
 class CSV:
@@ -67,6 +68,38 @@ class CSV:
         
         return filtered_df
 
+
+def plot_transaction(df):
+    df['date'] = pd.to_datetime(df['date'], format="%d-%m-%Y")
+
+    # Urutkan berdasarkan kolom 'date'
+    df = df.sort_values(by='date')
+
+    # Set 'date' sebagai index setelah diurutkan
+    df.set_index("date", inplace=True)
+
+    income_df = (
+        df[df["category"]=="Income"]
+        .resample("D")
+        .sum()
+        .reindex(df.index, fill_value = 0)
+    )
+    expense_df = (
+        df[df["category"]=="Expense"]
+        .resample("D")
+        .sum()
+        .reindex(df.index, fill_value = 0)
+    )
+    plt.figure(figsize=(10, 5))
+    plt.plot(income_df.index, income_df['amount'], label = 'Income', color = 'g')
+    plt.plot(expense_df.index, expense_df['amount'], label = 'Expense', color = 'r')
+    plt.xlabel("Date")
+    plt.ylabel("Amount")
+    plt.title("Income and Expenses Over Time")
+    plt.legend()
+    plt.grid(True)
+    plt.show()
+
 def add():
     CSV.initialize_csv()
     date = get_date(
@@ -91,6 +124,8 @@ def main():
             start_date = get_date("Enter the start date (dd-mm-yyyy) or enter for today's date: ", allow_default= True)
             end_date = get_date("Enter the end date (dd-mm-yyyy) or enter for today's date: ", allow_default= True)
             df = CSV.get_transaction(start_date=start_date, end_date=end_date)
+            if input("Do u want to see a plot? (y/n): ").lower() == 'y':
+                plot_transaction(df)
         elif choice == "3":
             print("Exiting..")
             break
@@ -100,5 +135,4 @@ def main():
 
 
 if __name__ == "__main__":
-    CSV.initialize_csv()
     main()

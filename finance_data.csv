@@ -1,3 +1,15 @@
 date,amount,category,desc
 25-11-2024,25000.0,Income,Test
 01-10-2024,10000.0,Expense,Test
+25-11-2024,25000.0,Income,Test
+01-10-2024,10000.0,Expense,Test
+14-01-2023,1583.75,Income,Groceries
+08-09-2022,3242.50,Expense,Salary
+11-12-2020,2789.10,Income,Shopping
+03-03-2021,1050.20,Expense,Entertainment
+23-06-2023,4753.45,Income,Salary
+15-04-2024,1832.10,Expense,Bills
+05-11-2021,2900.00,Income,Test
+17-07-2022,4100.99,Expense,Travel
+02-03-2024,123000.0,Income,No desc
+03-04-2024,28000.0,Expense,no desc
