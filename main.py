@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from data_entry import get_amount, get_category, get_date, get_desc
 
 class CSV:
-    CSV_FILE = 'finance_data.csv'
+    CSV_FILE = 'outputs/finance_data.csv'
     COLUMNS = ['date_input','date', 'amount', 'category', 'desc']
     DATE_FORMAT = "%d-%m-%Y"
 
